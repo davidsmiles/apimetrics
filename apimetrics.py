@@ -13,10 +13,10 @@ class ApiMetrics:
                 Credentials are set up in config.py
                 """
         self.client = MongoClient(
-            f"mongodb+srv://{mongo_user}:{mongo_pw}@cluster0.f4iax.mongodb.net/gen?retryWrites=true&w=majority"
+            f"mongodb+srv://{mongo_user}:{mongo_pw}@cluster0.f4iax.mongodb.net/crawler?retryWrites=true&w=majority"
             # "mongodb://127.0.0.1:27017"
         )
-        self.db = self.client['gen']
+        self.db = self.client['crawler']
         self.apimetrics = self.db.apimetrics
 
     @classmethod
