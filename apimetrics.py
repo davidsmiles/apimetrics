@@ -29,4 +29,5 @@ class ApiMetrics:
 
     def send_to_db(self, data, keyword):
         if data:
-            self.apimetrics.insert({'keyword': keyword, 'data': data['positions'], 'related': data['related']})
+            data['keyword'] = keyword
+            self.apimetrics.insert(data)
